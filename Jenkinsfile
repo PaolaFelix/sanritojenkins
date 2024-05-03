@@ -24,7 +24,7 @@ pipeline {
                     sh 'docker tag mi-pagina-web pfeli/mi-pagina-web:latest'
         
                     // Iniciar sesión y empujar la imagen a Docker Hub
-                    withCredentials([usernamePassword(credentialsId: '', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    withCredentials([usernamePassword(credentialsId: 'b70e1498-ca5e-4dc2-b7ec-be42f7dc4d8b', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
                         sh 'docker push pfeli/mi-pagina-web:latest' 
                     }
